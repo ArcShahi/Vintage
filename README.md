@@ -48,7 +48,7 @@ After
 2. Set PowerShell Execution Policy
 Open PowerShell and run the following command to allow the script to execute:
 ```powershell
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser|
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 This will allow locally created scripts to run and prompt you to allow downloaded scripts from trusted sources.
