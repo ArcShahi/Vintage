@@ -14,20 +14,16 @@ def convert_images_to_greyscale(input_folder):
             file_path = os.path.join(root, filename)
 
             # Only process image files (you can add more formats if needed)
-            if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif')):
+            if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif')) and root != output_folder:
                 try:
                     # Open the image
                     with Image.open(file_path) as img:
                         # Convert the image to greyscale
                         greyscale_img = img.convert("L")
                     
-                        
-                        # Create corresponding output path in the 'vintage' folder (preserving subdirectories)
-                        relative_path = os.path.relpath(file_path, input_folder)  # Get relative path
-                        output_path = os.path.join(output_folder, relative_path)  # Combine with 'vintage' folder
-
-                        # Create the subdirectories in the 'vintage' folder if they don't exist
-                        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+                        # Create corresponding output path in the 'vintage' folder
+                        # Just use the filename without subdirectory structure
+                        output_path = os.path.join(output_folder, filename)
 
                         # Save the greyscale image in the 'vintage' folder
                         greyscale_img.save(output_path)
