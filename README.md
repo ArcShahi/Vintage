@@ -13,7 +13,10 @@ python vintage.py "images/folder"
 ```
 The output will be `images/folder/vintage` or modify the script to costumize output path.
 
-##
+>[!Note]
+>Report any issues or improvement
+
+## Comparison
 
 ![red eyes](https://github.com/user-attachments/assets/f63af4fb-1778-4fe0-a1fd-d154ccd7627b)
 
