@@ -14,6 +14,30 @@ python vintage.py "images/folder"
 ```
 The output will be `images/folder/vintage` or modify the script to costumize output path.
 
+>[!Info]
+>If you don't have Python installed , Follow the steps and Skip to bottom to see results of conversion
+
+
+1. Download the init.ps1 script
+Download the `init.ps1` script to your local machine.
+2. Set PowerShell Execution Policy
+Open PowerShell and run the following command to allow the script to execute:
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser|
+```
+
+This will allow locally created scripts to run and prompt you to allow downloaded scripts from trusted sources.
+
+3. Run the Script
+Now, execute the init.ps1 script by running this command in PowerShell:
+```powershell
+.\init.ps1
+```
+
+This will download and install Python and the Pillow module automatically!
+
+
+
 >[!Note]
 >Report any issues or improvement
 
