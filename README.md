@@ -3,8 +3,10 @@ Script to convert bulk images to greyscale
 
 ## Prerequisite
  1. Python installed
- 2. Pillow Module if not `pip install Pillow`
-    
+ 2. Pillow Module
+
+If you don't have those click [Here](#Install Python & Modules)
+
 
 The `.py` file should be present in the Directory or add it to your `Environment Path:` to call the script from anywhere (NOT RECOMMENDED )
 
@@ -16,8 +18,29 @@ or Just click on the `vintage.py` in the input folder
 
 The output will be `images/folder/vintage` or modify the script to costumize output path.
 
+
+
+
+
+>[!Note]
+>Report any issues or improvement
+
+## Comparison
+
+![red eyes](https://github.com/user-attachments/assets/f63af4fb-1778-4fe0-a1fd-d154ccd7627b)
+
+After
+
+![red eyes](https://github.com/user-attachments/assets/38421450-7aae-4e65-a781-728e04321d3b)
+
+
+
+
+
+## Install Python & Modules
+
 >[!IMPORTANT]
->If you don't have Python installed , Follow the below steps else click [Here](#Comparison) to see result of conversion.
+>If you don't have Python installed , Follow the below steps
 
 
 1. Download the init.ps1 script
@@ -37,16 +60,3 @@ Now, execute the init.ps1 script by running this command in PowerShell:
 ```
 
 This will download and install Python and the Pillow module automatically!
-
-
-
->[!Note]
->Report any issues or improvement
-
-## Comparison
-
-![red eyes](https://github.com/user-attachments/assets/f63af4fb-1778-4fe0-a1fd-d154ccd7627b)
-
-After
-
-![red eyes](https://github.com/user-attachments/assets/38421450-7aae-4e65-a781-728e04321d3b)
