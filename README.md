@@ -17,7 +17,7 @@ or Just click on the `vintage.py` in the input folder
 The output will be `images/folder/vintage` or modify the script to costumize output path.
 
 >[!IMPORTANT]
->If you don't have Python installed , Follow the steps else click [Here](## Comparison) to see result of conversion.
+>If you don't have Python installed , Follow the steps else click [Here](#Comparison) to see result of conversion.
 
 
 1. Download the init.ps1 script
