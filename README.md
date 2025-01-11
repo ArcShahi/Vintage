@@ -5,7 +5,7 @@ Script to convert bulk images to greyscale
  1. Python installed
  2. Pillow Module
 
-If you don't have those click [Here](#Install-Python-&-Modules)
+If you don't have those click [Here](#install-python--modules)
 
 
 The `.py` file should be present in the Directory or add it to your `Environment Path:` to call the script from anywhere (NOT RECOMMENDED )
