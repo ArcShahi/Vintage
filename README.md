@@ -12,6 +12,8 @@ The `.py` file should be present in the Directory or add it to your `Environment
 ```powershell
 python vintage.py "images/folder" 
 ```
+or Just click on the `vintage.py` in the input folder
+
 The output will be `images/folder/vintage` or modify the script to costumize output path.
 
 >[!Info]
