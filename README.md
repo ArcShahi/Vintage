@@ -43,8 +43,8 @@ After
 >If you don't have Python installed , Follow the below steps
 
 
-1. Download the init.ps1 script
-Download the `init.ps1` script to your local machine.
+1. Download the `init.ps1` script from [Here](https://github.com/ArcShahi/Vintage/blob/main/init.ps1)
+
 2. Set PowerShell Execution Policy
 Open PowerShell and run the following command to allow the script to execute:
 ```powershell
