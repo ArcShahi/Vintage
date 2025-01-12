@@ -1,5 +1,5 @@
 # Vintage
-Script to convert bulk images to greyscale
+Script to convert bulk images to greyscale (LOSSLESS CONVERSION )
 
 ## Prerequisite
  1. Python installed
