@@ -16,7 +16,7 @@ python vintage.py "images/folder"
 ```
 or Just click on the `vintage.py` in the input folder
 
-The output will be `images/folder/vintage` or modify the script to costumize output path.
+The output will be `images/folder/folder_name[BW]` or modify the script to costumize output path.
 
 
 
