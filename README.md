@@ -12,11 +12,11 @@ The `.py` file should be present in the Directory or add it to your `Environment
 
 ## Usage : Call it in the folder
 ```powershell
-python vintage.py "images/folder" 
+python vintage.py "path/to/folder" 
 ```
 or Just click on the `vintage.py` in the input folder
 
-The output will be `images/folder[BW]` or modify the script to costumize output path.
+The output will be `path/to/folder[BW]` or modify the script to costumize output path.
 
 
 
