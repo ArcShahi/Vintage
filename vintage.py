@@ -3,7 +3,8 @@ import sys
 from PIL import Image
 
 def convert_images_to_greyscale(input_folder):
-    output_folder = os.path.join(input_folder, "vintage")
+   
+    output_folder = input_folder + "[BW]"
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
