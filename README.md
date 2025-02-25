@@ -27,11 +27,11 @@ The output will be `path/to/folder[BW]` or modify the script to costumize output
 
 ## Comparison
 
-<img src="https://github.com/user-attachments/assets/f63af4fb-1778-4fe0-a1fd-d154ccd7627b" width="500" height="500">
+<img src="https://github.com/user-attachments/assets/f63af4fb-1778-4fe0-a1fd-d154ccd7627b" width="500" height="250">
 
 After
 
-<img src="https://github.com/user-attachments/assets/38421450-7aae-4e65-a781-728e04321d3b" width="500" height="500">
+<img src="https://github.com/user-attachments/assets/38421450-7aae-4e65-a781-728e04321d3b" width="500" height="250">
 
 
 
