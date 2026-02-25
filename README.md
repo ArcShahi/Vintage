@@ -32,11 +32,11 @@ python vintage.py "path/to/img"
 
 Before :
 
-<img src="https://github.com/user-attachments/assets/99a5ddcb-6593-4933-a39d-bc2ddd7fd924" width=500, height=500>
+<img src="https://github.com/user-attachments/assets/99a5ddcb-6593-4933-a39d-bc2ddd7fd924" width=500, height=700>
 
 After:
 
-<img src="https://github.com/user-attachments/assets/e731e0e3-af4c-4f35-b683-1c8075b5a38b" width=500, height=500>
+<img src="https://github.com/user-attachments/assets/e731e0e3-af4c-4f35-b683-1c8075b5a38b" width=500, height=700>
 
 
 
