@@ -2,62 +2,70 @@ import os
 import sys
 from PIL import Image
 
-def convert_images_to_greyscale(input_folder):
-   
-    output_folder = input_folder + "[BW]"
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
+IMG_FMTS=('.png','.jpg','.jpeg','.bmp','.tiff','.webp')
 
-    # Extended image formats
-    IMAGE_FORMATS = ('.png', '.jpg', '.jpeg', '.bmp', '.tiff', '.webp')
 
-    for root, dirs, files in os.walk(input_folder):
-        for filename in files:
-            if filename.lower().endswith(IMAGE_FORMATS) and root != output_folder:
-                file_path = os.path.join(root, filename)
-                try:
-                    with Image.open(file_path) as img:
-                        # Keep original format and mode info
-                        original_format = img.format
-                        original_mode = img.mode
-                        
-                        # Convert to greyscale
-                        greyscale_img = img.convert('L')
-                        
-                        # Maintain original extension
-                        output_path = os.path.join(output_folder, filename)
-                        
-                        # Save with format-specific settings to maintain quality
-                        if original_format == 'JPEG' or original_format == 'JPG':
-                            greyscale_img.save(output_path, 'JPEG', quality=100)
-                        elif original_format == 'PNG':
-                            greyscale_img.save(output_path, 'PNG')
-                        elif original_format == 'BMP':
-                            greyscale_img.save(output_path, 'BMP')
-                        elif original_format == 'TIFF':
-                            greyscale_img.save(output_path, 'TIFF')
-                        elif original_format == 'WEBP':
-                            greyscale_img.save(output_path, 'WEBP', lossless=True, quality=100)
-                        else:
-                            # For any other format, preserve original
-                            greyscale_img.save(output_path, original_format)
-                        
-                        print(f"Converted {filename} to greyscale successfully.")
-                except Exception as e:
-                    print(f"Error processing {filename}: {e}")
+def greyscale(src_path,out_dir):
+    
+    filename=os.path.basename(src_path)
+    dst_path=os.path.join(out_dir,filename)
+    
+    try:
+        with Image.open(src_path) as img:
+            bw_img=img.convert('L')
+            bw_img.save(dst_path)
+            print(f"Converted: {filename}")
+    except Exception as e:
+        print(f"Failed: {filename}. Don't know why... JK : {e}")
+        
+
+def process_dir(in_dir):
+    
+    out_dir=in_dir.rstrip(os.sep)+"[BW]"
+    os.makedirs(out_dir,exist_ok=True)
+    
+    for root,dirs, files in os.walk(in_dir):
+        if os.path.abspath(root)==os.path.abspath(out_dir):
+            continue
+        
+        rel=os.path.relpath(root,in_dir)
+        dest_root=os.path.join(out_dir,rel)
+        os.makedirs(dest_root,exist_ok=True)
+        
+        for file in files:
+            if file.lower().endswith(IMG_FMTS):
+                greyscale(os.path.join(root,file),dest_root)
+
+
+def process_img(file_path):
+    
+    if not file_path.lower().endswith(IMG_FMTS):
+        print("Umm what is this img format ?!")
+        return
+    
+    parent=os.path.dirname(file_path)
+    out_dir=os.path.join(parent,"[BW]")
+    os.makedirs(out_dir,exist_ok=True)
+    
+    greyscale(file_path,out_dir)
+    
 
 def main():
-    if len(sys.argv) != 2:
-        input_folder = os.getcwd()
-        print(f"No folder path provided. Using current working directory: {input_folder}")
+    
+    path=""
+    
+    if len(sys.argv)<2:
+        path=os.getcwd()
     else:
-        input_folder = sys.argv[1]
-    
-    if not os.path.exists(input_folder):
-        print(f"The folder {input_folder} does not exist.")
-        sys.exit(1)
-    
-    convert_images_to_greyscale(input_folder)
+        path=sys.argv[1]
 
-if __name__ == "__main__":
+
+    if os.path.isfile(path):
+        process_img(path)
+    elif os.path.isdir(path):
+        process_dir(path)
+    else :
+        print("USAGE:\n <vintage.py> <folder> || <img>")
+
+if __name__=="__main__":
     main()
