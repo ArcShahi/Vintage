@@ -71,9 +71,9 @@ This will download and install Python and the Pillow module automatically
 
 ## AI USAGE DISCLOSURE 
 
-- THE SCRIPT AND THE README IS WRITTEN WITHOUT ANY HELP OF ANY LLM, CO-PILOT, AI AGENT OR WHATEVER.
-- The Powershell script is partially AI Generated. WHICH ? It's irrelevant. Each one of them generated almost identical code. 
-- The README commit messages are sometimes self suggested by Github copilot.
+THE SCRIPT AND THE README IS WRITTEN WITHOUT ANY HELP OF ANY LLM, CO-PILOT, AI AGENT OR WHATEVER.
+
+The Powershell script is partially AI Generated. WHICH ? It's irrelevant. Each one of them generated almost identical code. The README commit messages are sometimes self suggested by Github copilot.
 
 
 
