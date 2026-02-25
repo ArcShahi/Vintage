@@ -1,16 +1,20 @@
 # Vintage
-Script to convert bulk images to greyscale (LOSSLESS CONVERSION )
+Simple script to convert single images or bulk images to greyscale. Without lossingn quality.
+
+Supported format : `png , jpeg , jpg , bmp , tiff , webp . jfif '
 
 ## Prerequisite
- 1. Python installed
+ 1. Python installed ofcourse
  2. Pillow Module
 
 If you don't have those click [Here](#install-python--modules)
 
 
-The `.py` file should be present in the Directory or add it to your `Environment Path:` to call the script from anywhere (NOT RECOMMENDED )
+**The `.py` file should be present in the Directory or add it to your `Environment Path:` to call the script from anywhere (NOT RECOMMENDED )**
 
-## Usage : Call it in the folder
+## Usage :
+
+### Bulk convertingn all images in a directory
 ```powershell
 python vintage.py "path/to/folder" 
 ```
@@ -18,21 +22,21 @@ or Just click on the `vintage.py` in the input folder
 
 The output will be `path/to/folder[BW]` or modify the script to costumize output path.
 
+### Single Images : 
+```
+python vintage.py "path/to/img"
+```
 
-
-
-
->[!Note]
->Report any issues or improvement
 
 ## Comparison
 
-<img src="https://github.com/user-attachments/assets/f63af4fb-1778-4fe0-a1fd-d154ccd7627b" width="500" height="250">
+Before :
 
-After
+![study_127416753_p0_morang_16663458](https://github.com/user-attachments/assets/99a5ddcb-6593-4933-a39d-bc2ddd7fd924)
 
-<img src="https://github.com/user-attachments/assets/38421450-7aae-4e65-a781-728e04321d3b" width="500" height="250">
+After:
 
+![study_127416753_p0_morang_16663458](https://github.com/user-attachments/assets/e731e0e3-af4c-4f35-b683-1c8075b5a38b)
 
 
 
