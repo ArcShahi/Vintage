@@ -1,5 +1,5 @@
 # Vintage
-Simple script to convert single images or bulk images to greyscale. Without lossing quality.
+Simple script to convert single images or bulk images to greyscale. Without Quality Loss.
 
 Supported format : `png , jpeg , jpg , bmp , tiff , webp . jfif`
 
