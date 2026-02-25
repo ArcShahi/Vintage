@@ -2,7 +2,7 @@ import os
 import sys
 from PIL import Image
 
-IMG_FMTS=('.png','.jpg','.jpeg','.bmp','.tiff','.webp')
+IMG_FMTS=('.png','.jpg','.jpeg','.bmp',',.tiff','.webp','.jfif')
 
 
 def greyscale(src_path,out_dir):
