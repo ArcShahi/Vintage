@@ -1,7 +1,7 @@
 # Vintage
 Simple script to convert single images or bulk images to greyscale. Without lossingn quality.
 
-Supported format : `png , jpeg , jpg , bmp , tiff , webp . jfif '
+Supported format : `png , jpeg , jpg , bmp , tiff , webp . jfif`
 
 ## Prerequisite
  1. Python installed ofcourse
@@ -62,4 +62,15 @@ Now, execute the init.ps1 script by running this command in PowerShell:
 .\init.ps1
 ```
 
-This will download and install Python and the Pillow module automatically!
+This will download and install Python and the Pillow module automatically
+
+
+-Shahi
+
+## AI USAGE DISCLOSURE 
+
+THE SCRIPT AND THE README IS WRITTEN WITHOUT ANY HELP OF ANY LLM, CO-PILOT, AI AGENT OR WHATEVER.
+The Powershell script is partially AI Generated. WHICH ? It's irrelevant. Each one of them generated almost identical code. The README commit messages are sometimes self suggested by Github copilot.
+
+
+
