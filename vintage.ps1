@@ -8,7 +8,7 @@ $Source = (Resolve-Path $Source).Path
 # Mirroring input dir structure to avoid overwriting of files..
 $parent = Split-Path $Source -Parent
 $name = Split-Path $Source -Leaf
-$Dest = Join-Path $parent "$name[V]"
+$Dest = Join-Path $parent "$name[VT]"
 
 New-Item -ItemType Directory -Path $Dest -Force | Out-Null
 
