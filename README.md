@@ -99,16 +99,16 @@ After:
 <img src="https://github.com/user-attachments/assets/dd4067fc-c6a1-4fc3-a036-1b2355190ee1" width=500, height=1000>
 
 
+----
 
 
 
-
-> " The little details is what sets us apart"
+> " The little details are what sets us apart..."
                                - DNA ( Probably )
 
 
 
-
+----
 
 
 >[!CAUTION]
@@ -123,9 +123,12 @@ After:
 
 ## AI USAGE DISCLOSURE 
 
-THE SCRIPT AND THE README IS WRITTEN WITHOUT ANY HELP OF ANY LLM, CO-PILOT, AI AGENT OR WHATEVER.
+THE SCRIPTS AND THE README IS WRITTEN WITHOUT ANY HELP OF ANY LLM, CO-PILOT, AI AGENT OR WHATEVER.
 
-The Powershell script is partially AI Generated. WHICH ? It's irrelevant. Each one of them generated almost identical code. The README commit messages are sometimes self suggested by Github copilot.
+THE COMMITS MESSAGES ARE SOMETIMES WRITTEN BY GITHUB COPILOT.
+
+EVERY REFERNCE ARE TAKEN FROM OFFICIAL DOCS , ARTICLES AND BOOKS.
+
 
 
 
