@@ -104,6 +104,13 @@ After:
 <img src="https://github.com/user-attachments/assets/dd4067fc-c6a1-4fc3-a036-1b2355190ee1" width=500, height=1000>
 
 
+
+
+> " The little details is what sets us apart"
+                               - DNA ( Probably )
+
+
+
 -Shahi
 
 ## AI USAGE DISCLOSURE 
