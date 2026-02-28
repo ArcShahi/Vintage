@@ -1,71 +1,71 @@
 import os
 import sys
+import time
 from PIL import Image
 
-IMG_FMTS=('.png','.jpg','.jpeg','.bmp',',.tiff','.webp','.jfif')
 
-
-def greyscale(src_path,out_dir):
+def greyscale(in_dir):
     
-    filename=os.path.basename(src_path)
-    dst_path=os.path.join(out_dir,filename)
+    print(f"\nScript Executing>>>\nConverting Dir : {os.path.abspath(in_dir)} to Greyscale...\n")
     
-    try:
-        with Image.open(src_path) as img:
-            bw_img=img.convert('L')
-            bw_img.save(dst_path)
-            print(f"Converted: {filename}")
-    except Exception as e:
-        print(f"Failed: {filename}. Don't know why... JK : {e}")
+    # Will work with these , IDK if there are others
+    IMG_FMTS = ('.png', '.jpg', '.jpeg', '.bmp', '.tiff', '.webp', '.jfif')
+    
+    
+    temp_dir=in_dir.rstrip(os.sep)+"[V]"
+    os.makedirs(temp_dir,exist_ok=True)
         
-
-def process_dir(in_dir):
-    
-    out_dir=in_dir.rstrip(os.sep)+"[BW]"
-    os.makedirs(out_dir,exist_ok=True)
-    
-    for root,dirs, files in os.walk(in_dir):
-        if os.path.abspath(root)==os.path.abspath(out_dir):
+    for root,dirs,files in os.walk(in_dir):
+        
+        if os.path.abspath(root).startswith(os.path.abspath(temp_dir)):
             continue
         
-        rel=os.path.relpath(root,in_dir)
-        dest_root=os.path.join(out_dir,rel)
-        os.makedirs(dest_root,exist_ok=True)
+        # Mirroring so the dir structure is preserved. avoids overwriting of files...
+        out_dir=os.path.join(temp_dir,os.path.relpath(root,in_dir))
+        os.makedirs(out_dir,exist_ok=True)
+        
         
         for file in files:
-            if file.lower().endswith(IMG_FMTS):
-                greyscale(os.path.join(root,file),dest_root)
+            
+            if not file.lower().endswith(IMG_FMTS):
+                continue
+            
+            in_path=os.path.join(root,file)
+            out_path=os.path.join(out_dir,file)
+            
+            print(f"Converting: {file} ... ", end="")
+            
+            try:
+                with Image.open(in_path) as img:
+                    fmt = img.format or os.path.splitext(file)[1][1:].upper()
+                    gray = img.convert("L")
+                    save_kwargs={}
+                    
+                    if fmt in ("JPEG","JPG"):
+                        save_kwargs=dict(quality=100,subsampling=0)
+                    elif fmt=="WEBP":
+                        save_kwargs=dict(lossless=True)
+                    elif fmt=="PNG":
+                        save_kwargs=dict(compress_level=0)
+                        
+                    
+                    gray.save(out_path,fmt,**save_kwargs)
+            
+                print("✓")
+            
+            except Exception as e:
+                print(f"{file} ✗ --Don't know why...JK: {e}")
+                
+            
 
-
-def process_img(file_path):
-    
-    if not file_path.lower().endswith(IMG_FMTS):
-        print("Umm what is this img format ?!")
-        return
-    
-    parent=os.path.dirname(file_path)
-    out_dir=os.path.join(parent,"[BW]")
-    os.makedirs(out_dir,exist_ok=True)
-    
-    greyscale(file_path,out_dir)
-    
 
 def main():
+    start=time.perf_counter()
+    greyscale(sys.argv[1] if len(sys.argv)>=2 else os.getcwd())
+    end=time.perf_counter()
     
-    path=""
+    print(f"Time taken: {end - start:.4f} seconds\n\n")
     
-    if len(sys.argv)<2:
-        path=os.getcwd()
-    else:
-        path=sys.argv[1]
-
-
-    if os.path.isfile(path):
-        process_img(path)
-    elif os.path.isdir(path):
-        process_dir(path)
-    else :
-        print("USAGE:\n <vintage.py> <folder> || <img>")
 
 if __name__=="__main__":
     main()
