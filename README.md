@@ -87,7 +87,7 @@ vintage.ps1 "path\to\dir"
 You'll get your output at `path\to\dir[v]` , or modify the path.
 
 
->[CAUTION]
+>[!CAUTION]
 > I don't know much about ImageMagick so I'll have to do a bit of experimenting before I get the version of greyscale I like best.
 >
 > But If you've any suggestion or error reports , please let me know.
