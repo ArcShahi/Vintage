@@ -3,61 +3,71 @@ param(
     [string]$Source
 )
 
-$Source = (Resolve-Path $Source).Path
+if (-not (Get-Command magick -ErrorAction SilentlyContinue)) {
+    Write-Host "ImageMagick not found in PATH!" -ForegroundColor Red
+    exit 1
+}
+
+$Source = (Resolve-Path $Source).Path.TrimEnd('\', '/')
 
 # Mirroring input dir structure to avoid overwriting of files..
 $parent = Split-Path $Source -Parent
-$name = Split-Path $Source -Leaf
-$Dest = Join-Path $parent "$name[VT]"
+$name   = Split-Path $Source -Leaf
+$Dest   = Join-Path $parent "$name`[VT`]"  
 
 New-Item -ItemType Directory -Path $Dest -Force | Out-Null
 
-$lossy = @(".jpg", ".jpeg", ".webp", ".heic", ".avif")
+$lossy   = @(".jpg", ".jpeg", ".webp", ".heic", ".avif")
 $pattern = "\.(png|jpg|jpeg|bmp|tiff|tif|webp|heic|avif)$"
 
-$images = Get-ChildItem $Source -Recurse -File |
-Where-Object { $_.Extension.ToLower() -match $pattern }
+$images = Get-ChildItem -LiteralPath $Source -Recurse -File |
+          Where-Object { $_.Extension.ToLower() -match $pattern }
 
-Write-Host "Processing pics..." -ForegroundColor Cyan
-Write-Host "Output dir: $Dest"  -ForegroundColor DarkCyan
+if ($images.Count -eq 0) {
+    Write-Host "No images found in $Source" -ForegroundColor Yellow
+    exit 0
+}
 
-# May cause some issues.. remove the cores var and experiment a bit. Kay :)
+Write-Host "Found $($images.Count) image(s)" -ForegroundColor Cyan
+Write-Host "Processing pics..."              -ForegroundColor Cyan
+Write-Host "Output dir: $Dest"              -ForegroundColor DarkCyan
+
 $cores = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
-$sync = [System.Collections.Hashtable]::Synchronized(@{})
+$sync  = [System.Collections.Hashtable]::Synchronized(@{})
 
 $elapsed = Measure-Command {
     $images | ForEach-Object -Parallel {
-        $img = $_
-        $ext = $img.Extension.ToLower()
-        $relative = $img.FullName.Substring($using:Source.Length)
+        $img      = $_
+        $ext      = $img.Extension.ToLower()
+        $relative = $img.FullName.Substring($using:Source.Length).TrimStart('\', '/')
 
         if ($using:lossy -contains $ext) {
             $relative = [System.IO.Path]::ChangeExtension($relative, ".png")
         }
 
-       # Change it if you wanna change output dir
         $outPath = Join-Path $using:Dest $relative
         New-Item -ItemType Directory -Path (Split-Path $outPath) -Force | Out-Null
 
-       # If you know ImageMagick CLI flags feel free to modify it as needed. LinearGray can also be used ( LOT DARKER )
-        magick "$($img.FullName)" -colorspace Gray -depth 16 "$outPath"
+        $result = Start-Process "magick" `
+            -ArgumentList "`"$($img.FullName)`" -colorspace Gray -depth 16 `"$outPath`"" `
+            -Wait -PassThru -NoNewWindow
+        $exit = $result.ExitCode
 
         $sync = $using:sync
         [System.Threading.Monitor]::Enter($sync)
         try {
-            if ($LASTEXITCODE -eq 0) {
+            if ($exit -eq 0) {
                 Write-Host "  $($img.Name) " -ForegroundColor DarkGray -NoNewline
-                Write-Host "✓" -ForegroundColor Green
-            }
-            else {
+                Write-Host "✓"               -ForegroundColor Green
+            } else {
                 Write-Host "  ✗ $($img.FullName)" -ForegroundColor Red
             }
-        }
-        finally {
+        } finally {
             [System.Threading.Monitor]::Exit($sync)
         }
 
     } -ThrottleLimit $cores
 }
-Write-Host "Done >_<" -ForegroundColor Cyan
+
+Write-Host "Done >_<"                                              -ForegroundColor Cyan
 Write-Host "Time: $($elapsed.Seconds)s $($elapsed.Milliseconds)ms" -ForegroundColor DarkCyan
