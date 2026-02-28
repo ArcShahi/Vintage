@@ -5,7 +5,7 @@ I had previously written it in python. Because for some  reason I had forgotten 
 
 Anyways but I didn't wanted to remove the Python version so here we are with 2 verstion of bulk image processors...
 
->[!tip] Pay Attention
+>[!Important]
 > Select the version best fits your need
 > [Python](#Python-x-Pillow)
 > [PowerShell](#powershell-x-imagemagic-)
