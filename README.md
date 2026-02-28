@@ -7,7 +7,7 @@ Anyways but I didn't wanted to remove the Python version so here we are with 2 v
 
 >[!tip]
 > Select the version best fits your need
-> [Python](
+> [Python](#Python-x-Pillow)
 
  you can select anyone based on your usecase.
 
