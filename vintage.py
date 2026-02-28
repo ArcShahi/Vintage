@@ -12,7 +12,7 @@ def greyscale(in_dir):
     IMG_FMTS = ('.png', '.jpg', '.jpeg', '.bmp', '.tiff', '.webp', '.jfif')
     
     
-    temp_dir=in_dir.rstrip(os.sep)+"[V]"
+    temp_dir=in_dir.rstrip(os.sep)+"[VT]"
     os.makedirs(temp_dir,exist_ok=True)
         
     for root,dirs,files in os.walk(in_dir):
