@@ -1,18 +1,30 @@
 # Vintage
-Simple script to convert single images or bulk images to greyscale. Without Quality Loss.
+Simple script to convert bulk images to greyscale.
+
+I had previously written it in python. Because for some  reason I had forgotten that awesome tools like : FFMPEG , ImageMagick exist... I really should stop eating so many chocolate doughnuts.
+
+Anyways but I didn't wanted to remove the Python version so here we are with 2 verstion of bulk image processors...
+
+
+We've 2 version you can select anyone based on your usecase.
+
+## Python version
+- If you don't care about greyscale type is bit off... Just need it greyscaled.
+- Already have Python installed and wanna use it for some other project
+- Don't care about pixel-pefect
+
+### Prerequisite
+ 1. Python installed ofcourse `winget install Python`
+ 2. Pillow Module `pip install pillow`
 
 Supported format : `png , jpeg , jpg , bmp , tiff , webp . jfif`
-
-## Prerequisite
- 1. Python installed ofcourse
- 2. Pillow Module
 
 If you don't have those click [Here](#install-python--modules)
 
 
 **The `.py` file should be present in the Directory or add it to your `Environment Path:` to call the script from anywhere (NOT RECOMMENDED )**
 
-## Usage :
+### Usage :
 
 ### Bulk convertingn all images in a directory
 ```powershell
@@ -28,7 +40,7 @@ python vintage.py "path/to/img"
 ```
 
 
-## Comparison
+### Comparison
 
 Before :
 
@@ -41,22 +53,7 @@ After:
 
 
 
-## Install Python & Modules
 
->[!IMPORTANT]
->If you don't have Python installed , Follow the below steps [FOR WINDOWS]
-
-### Use `Winget` to install Python
-
-1. Install Python by Winget
-```
-winget install Python
-```
-2. Use PIP to install Pillow module
-
-```powershell
-pip install pillow
-```
 
 -Shahi
 
