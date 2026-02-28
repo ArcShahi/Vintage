@@ -19,7 +19,7 @@ $images = Get-ChildItem $Source -Recurse -File |
 Where-Object { $_.Extension.ToLower() -match $pattern }
 
 Write-Host "Processing pics..." -ForegroundColor Cyan
-Write-Host "Output dir: $Dest`n"  -ForegroundColor DarkCyan
+Write-Host "Output dir: $Dest"  -ForegroundColor DarkCyan
 
 # May cause some issues.. remove the cores var and experiment a bit. Kay :)
 $cores = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
