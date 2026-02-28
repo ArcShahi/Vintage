@@ -42,7 +42,7 @@ python vintage.py "path/to/folder"
 ```
 or Just click on the `vintage.py` in the input folder
 
-The output will be `path/to/folder[V]` or modify the script to costumize output path.
+The output will be `path/to/folder[VG]` or modify the script to costumize output path.
 
 
 
@@ -84,7 +84,7 @@ Unblock-File -Path "path\to\vintage.ps1"
 vintage.ps1 "path\to\dir"
 ```
 
-You'll get your output at `path\to\dir[v]` , or modify the path.
+You'll get your output at `path\to\dir[VG]` , or modify the path.
 
 
 ### Comparision
