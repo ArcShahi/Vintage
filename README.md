@@ -14,8 +14,13 @@ We've 2 version you can select anyone based on your usecase.
 - Don't care about pixel-pefect
 
 ### Prerequisite
- 1. Python installed ofcourse `winget install Python`
- 2. Pillow Module `pip install pillow`
+ 1. Python installed ofcourse 
+   ```bash
+   winget install Python 
+   ```
+ 2. Pillow Module ```bash
+ pip install pillow
+ ```
 
 Supported format : `png , jpeg , jpg , bmp , tiff , webp . jfif`
 
