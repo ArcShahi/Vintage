@@ -73,7 +73,7 @@ Use this version :
 ### Prerequisites:
 
 1. Install **ImageMagick** from [Here](https://imagemagick.org/script/download.php#gsc.tab=0)
-2. Open PowerShell and unblock this file so Windows will allow it to run 
+2. Open PowerShell and unblock this file so Windows **may** allow it to run 
 ```powershell
 Unblock-File -Path "path\to\vintage.ps1"
 ```
@@ -127,6 +127,6 @@ THE COMMITS MESSAGES ARE SOMETIMES WRITTEN BY GITHUB COPILOT.
 EVERY REFERNCE ARE TAKEN FROM OFFICIAL DOCS , ARTICLES AND BOOKS.
 
 
--Shahi | Prefers natural stupidity over AI
+-**Shahi** | *Prefers natural stupidity over AI*
 
 
