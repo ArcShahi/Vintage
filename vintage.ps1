@@ -13,7 +13,7 @@ $Source = (Resolve-Path $Source).Path.TrimEnd('\', '/')
 # Mirroring input dir structure to avoid overwriting of files..
 $parent = Split-Path $Source -Parent
 $name   = Split-Path $Source -Leaf
-$Dest   = Join-Path $parent "$name`[VT`]"  
+$Dest   = Join-Path $parent "$name`[VT`]"   # backtick-escape brackets so PoSh won't glob them
 
 New-Item -ItemType Directory -Path $Dest -Force | Out-Null
 
@@ -48,10 +48,8 @@ $elapsed = Measure-Command {
         $outPath = Join-Path $using:Dest $relative
         New-Item -ItemType Directory -Path (Split-Path $outPath) -Force | Out-Null
 
-        $result = Start-Process "magick" `
-            -ArgumentList "`"$($img.FullName)`" -colorspace Gray -depth 16 `"$outPath`"" `
-            -Wait -PassThru -NoNewWindow
-        $exit = $result.ExitCode
+       & magick "$($img.FullName)" -colorspace Gray -depth 16 "$outPath"
+       $exit = $LASTEXITCODE
 
         $sync = $using:sync
         [System.Threading.Monitor]::Enter($sync)
