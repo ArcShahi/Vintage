@@ -61,7 +61,7 @@ After:
 
 ## PowerShell x ImageMagick :
 
-I created this version because I'm a avid artwork collector, I like to keep outstanding comic book panels , artworks. Most of them are in colors but after reading 1000s of Manga, I like to see them in greyscale version. Without losing any pixle.
+I created this version because I'm an avid artwork collector, I like to keep outstanding comic book panels , artworks. Most of them are in colors but after reading 1000s of Manga, I like to see them in greyscale version. Without losing any pixle.
 
 Use this version :
 - If you like to collect vivid artworks from Pixiv and others and wanna see them in greyscale . Because you understand some things look much better with 2 colors.
