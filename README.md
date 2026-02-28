@@ -5,45 +5,45 @@ I had previously written it in python. Because for some  reason I had forgotten 
 
 Anyways but I didn't wanted to remove the Python version so here we are with 2 verstion of bulk image processors...
 
+>[!tip]
+> Select the version best fits your need
+> [Python](
 
-We've 2 version you can select anyone based on your usecase.
+ you can select anyone based on your usecase.
 
-## Python version
+## Python x Pillow :
+
+
 - If you don't care about greyscale type is bit off... Just need it greyscaled.
 - Already have Python installed and wanna use it for some other project
 - Don't care about pixel-pefect
+
+See when to use [PowerShell version](PowerShell x ImageMagic :)
 
 ### Prerequisite
  1. Python installed ofcourse 
    ```bash
    winget install Python 
    ```
- 2. Pillow Module ```bash
+ 2. Pillow Module
+ ```bash
  pip install pillow
  ```
 
 Supported format : `png , jpeg , jpg , bmp , tiff , webp . jfif`
 
-If you don't have those click [Here](#install-python--modules)
+### Usage >
 
-
-**The `.py` file should be present in the Directory or add it to your `Environment Path:` to call the script from anywhere (NOT RECOMMENDED )**
-
-### Usage :
-
-### Bulk convertingn all images in a directory
 ```powershell
 python vintage.py "path/to/folder" 
 ```
 or Just click on the `vintage.py` in the input folder
 
-The output will be `path/to/folder[BW]` or modify the script to costumize output path.
+The output will be `path/to/folder[V]` or modify the script to costumize output path.
 
-### Single Images : 
-```powershell
-python vintage.py "path/to/img"
-```
 
+
+Here's comparsion .. we'll you can't see the details here anyway but trust me I've tested it throughly.
 
 ### Comparison
 
@@ -56,7 +56,15 @@ After:
 <img src="https://github.com/user-attachments/assets/2c485158-9111-458b-a499-ff7a90dacd33" width=500, height=700>
 
 
+## PowerShell x ImageMagic :
 
+I created this version because I'm a avid artwork collector, I like to keep outstanding comic book panels , artworks. Most of them are in colors but after reading 1000s of Manga, I like to see them in greyscale version. Without losing any pixle.
+
+Use this version :
+- If you like to collect vivid artworks from Pixiv and others and wanna see them in greyscale . Because you understand some things look much better with 2 colors.
+- If you like to collect 4K "homework" pics and wanna see them with a **Vintage** Feel. iykyk ;)
+- If you care too much about subtle details and gradient like me.
+- It's a bit slower compared to Python script. 
 
 
 
