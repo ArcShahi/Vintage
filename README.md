@@ -3,7 +3,7 @@ Simple script to convert bulk images to greyscale.
 
 I had previously written it in python. Because for some  reason I had forgotten that awesome tools like : FFMPEG , ImageMagick exist... I really should stop eating so many chocolate doughnuts.
 
-Anyways I didn't wanted to remove the Python version so here we are with 2 verstion of bulk image processors...
+Anyways I didn't wanted to remove the Python version so here we are with 2 versions of bulk image processors...
 
 >[!Important]
 > Select the version best fits your need
