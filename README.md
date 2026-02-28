@@ -5,9 +5,10 @@ I had previously written it in python. Because for some  reason I had forgotten 
 
 Anyways but I didn't wanted to remove the Python version so here we are with 2 verstion of bulk image processors...
 
->[!tip]
+>[!tip]Pay Attention
 > Select the version best fits your need
 > [Python](#Python-x-Pillow)
+> [PowerShell](#powershell-x-imagemagic-)
 
  you can select anyone based on your usecase.
 
@@ -64,7 +65,7 @@ Use this version :
 - If you like to collect vivid artworks from Pixiv and others and wanna see them in greyscale . Because you understand some things look much better with 2 colors.
 - If you like to collect 4K "homework" pics and wanna see them with a **Vintage** Feel. iykyk ;)
 - If you care too much about subtle details and gradient like me.
-- It's a bit slower compared to Python script. 
+- Don't have python installed and don't want to
 
 
 
