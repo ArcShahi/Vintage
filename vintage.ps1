@@ -18,10 +18,10 @@ $pattern = "\.(png|jpg|jpeg|bmp|tiff|tif|webp|heic|avif)$"
 $images = Get-ChildItem $Source -Recurse -File |
 Where-Object { $_.Extension.ToLower() -match $pattern }
 
-Write-Host "`nProcessing images..." -ForegroundColor Cyan
-Write-Host "Output folder: $Dest`n"  -ForegroundColor DarkCyan
+Write-Host "Processing pics..." -ForegroundColor Cyan
+Write-Host "Output dir: $Dest`n"  -ForegroundColor DarkCyan
 
-
+# May cause some issues.. remove the cores var and experiment a bit. Kay :)
 $cores = (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors
 $sync = [System.Collections.Hashtable]::Synchronized(@{})
 
@@ -35,9 +35,11 @@ $elapsed = Measure-Command {
             $relative = [System.IO.Path]::ChangeExtension($relative, ".png")
         }
 
+       # Change it if you wanna change output dir
         $outPath = Join-Path $using:Dest $relative
         New-Item -ItemType Directory -Path (Split-Path $outPath) -Force | Out-Null
 
+       # If you know ImageMagick CLI flags feel free to modify it as needed. LinearGray can also be used ( LOT DARKER )
         magick "$($img.FullName)" -colorspace Gray -depth 16 "$outPath"
 
         $sync = $using:sync
@@ -57,5 +59,5 @@ $elapsed = Measure-Command {
 
     } -ThrottleLimit $cores
 }
-Write-Host "`nDone >_<" -ForegroundColor Cyan
+Write-Host "Done >_<" -ForegroundColor Cyan
 Write-Host "Time: $($elapsed.Seconds)s $($elapsed.Milliseconds)ms" -ForegroundColor DarkCyan
