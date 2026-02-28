@@ -7,6 +7,7 @@ Anyways I didn't wanted to remove the Python version so here we are with 2 verst
 
 >[!Important]
 > Select the version best fits your need
+>
 > [Python](#Python-x-Pillow) or
 >
 > [PowerShell](#powershell-x-imagemagic-)
